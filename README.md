@@ -24,4 +24,48 @@ The dataset contains house sale prices for King County, which includes Seattle. 
 
 ### Steps:
 
+1. Importing Data Sets:
+
+   + Displaying the data types of each column using the function **_dtypes_**.
+
+2. Data Wrangling:
+
+   + Dropping the columns "id" and "Unnamed: 0" from axis 1 using the method **_drop()_**, then use the method **_describe()_** to obtain a statistical summary of the data;
+   + Replacing the missing values with the mean of the column using the method **_replace()_**.
+
+3. Exploratory Data Analysis:
+
+   + Using the method **_value_counts_** to count the number of houses with unique floor values, use the method **_.to_frame()_** to convert it to a dataframe;
+
+   + Use the function **_boxplot_** in the seaborn library to determine whether houses with a waterfront view or without a waterfront view have more price outliers;
+  
+   ![Boxplot](https://github.com/user-attachments/assets/840b2820-1a81-4605-bd52-acec8055f69f)
+
+   + Using the function **_regplot_** in the seaborn library to determine if the feature sqft_above is negatively or positively correlated with price.
+    
+   ![Scatterplot](https://github.com/user-attachments/assets/0b15c214-4a7a-4057-83e5-c39f9c24f2d4)
+
+4. Model Development:
+
+   + Fitting a **_linear regression model_** to predict the 'price' using the feature 'sqft_living', then calculating the **_R^2_**;
+  
+   + Fiting a **_linear regression model_** to predict the 'price' using the list of features;
+  
+   + Creating a list of tuples, the first element in the tuple contains the name of the estimator; the second element in the tuple contains the model constructor;
+  
+   + Using the list to create a **_pipeline object_** to predict the 'price', fitting the object using the features in the list features, and calculating the **_R^2_**.
+
+5. Model Evaluation and Refinment:
+
+   + Splitting the data into training and testing sets;
+  
+   + Creating and fit a **_Ridge regression object_** using the training data, setting the regularization parameter to 0.1, and calculating the R^2 using the test data;
+  
+   + Performing a **_second order polynomial transform_** on both the training data and testing data. Creating and fitting a **_Ridge regression object_** using the training data, setting the regularisation parameter to 0.1, and calculating the **_R^2_** utilising the test data provided. 
+
+    
+
+  
+
+   
 
